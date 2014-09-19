@@ -1,0 +1,31 @@
+<h1>Listing Appointment Details</h1>
+
+<table class="common-table">
+  <thead>
+  <tr>
+    <th><b>Appointment_Id:</b></td>
+    <th><b>Patient's Name:</b></th>
+    <th><b>Appointment Date:</b></th>
+    <th><b>Doctor's Name</b></th> 
+    <th><b>Doctor's Specialisation</b></th>  
+    <th colspan="3"><b>Update Options</b></th>
+  </tr> 
+  </thead>
+
+ <tbody>
+ <% @appointments.each do |appointment| %>
+      <tr>
+       
+            <td><%= appointment.id %></td>
+            <td><%= appointment.customer.name if appointment.customer.present? %></td>
+            <td><%= appointment.customer.date_time if appointment.customer.present? %></td>       
+            <td><%= appointment.doctor.name if appointment.doctor.present? %></td> 
+            <td><%= appointment.doctor.specialisation if appointment.doctor.present? %></td> 
+  
+            <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+            <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+ </tbody>
+</table>
+<%= link_to 'New Appointment', new_appointment_path %>

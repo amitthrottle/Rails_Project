@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: MyString
+  customer_id: 1
+  total: 1.5
+
+two:
+  status: MyString
+  customer_id: 1
+  total: 1.5

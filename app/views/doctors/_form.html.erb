@@ -1,0 +1,31 @@
+<%= form_for(@doctor) do |f| %>
+  
+<% if @doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doctor.errors.count, "error") %> prohibited this details from being saved:</h2>
+
+      <ul>
+      <% @doctor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+ <div class="field">
+    <b><%= f.label :name %></b><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <b><%= f.label :Specialisation %></b>
+    <%= select_tag "doctor[specialisation]", options_for_select([ "Opthalmologist", "ENT" ,"Cardiologist", "Dentist","Dermatologist", "Family Practician", "Pediatrician"], "Opthalmologist"), :multiple=>true  %>
+  </div>
+  <div class="field">
+    <b><%= f.label :Availability %></b><br />
+    <%= f.label :Start_Time %><%= f.text_field :start_time %><br/>
+    <%= f.label :End_Time %>      <%= f.text_field :end_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

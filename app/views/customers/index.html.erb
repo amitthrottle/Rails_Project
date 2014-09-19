@@ -1,0 +1,35 @@
+<h1>Listing Patients</h1>
+
+<table class="common-table" border="0" >
+  <thead>
+  <tr>
+    <th><b>Patient_Id</b></td>
+    <th><b>Name</b></th>
+    <th><b>Email</b></th>
+    <th><b>Address</b></th>
+     <th><b>Contact</b></th>    
+    <th><b>Day</b></th>  
+    <th colspan="3"><b>Update Options</b></th>
+  </tr>
+  </thead>
+    <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <% if (customer.date_time >=  @current_time) %>
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.email_id %></td>
+            <td><%= customer.address %></td>
+            <td><%= customer.contact_no %></td> 
+            <td><%= customer.date_time %></td> 
+          
+            <td><%= link_to 'Show', customer %></td>
+            <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+            <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+ </tbody>
+</table>
+
+<%= link_to 'New Patient', new_customer_path %>

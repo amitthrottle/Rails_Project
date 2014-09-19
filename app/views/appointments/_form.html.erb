@@ -1,0 +1,23 @@
+<%= form_for(@appointment) do |f| %>
+ 
+    <div class="field">
+      <div class="field">
+        <b><%= f.label :Patient_Name %></b>
+        <%= f.collection_select(:customer_id, Customer.all, :id, :name) %>
+      </div>
+     <div class="field">
+        <b><%= f.label :Timing %></b>
+        <%= f.collection_select(:customer_date_time, Customer.all, :id, :date_time) %>
+     </div>
+     <div class="field">
+        <b><%= f.label :Doctor_Name %></b>
+        <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
+     </div>
+     <div class="field">
+        <b><%= f.label :Doctor_Specialisation %></b>
+        <%= f.collection_select(:doctor_id, Doctor.all, :id, :specialisation) %>
+     </div>
+     <div class="actions">
+       <%= f.submit %>
+     </div>
+<% end %>
