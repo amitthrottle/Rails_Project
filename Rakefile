@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Appointment::Application.load_tasks
+Appointment_a::Application.load_tasks

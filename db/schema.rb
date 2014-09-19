@@ -21,19 +21,6 @@ ActiveRecord::Schema.define(:version => 20140814063041) do
     t.datetime "updated_at",         :null => false
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "category_products", :force => true do |t|
-    t.integer  "product_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "email_id"
@@ -63,14 +50,6 @@ ActiveRecord::Schema.define(:version => 20140814063041) do
     t.datetime "end_time"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-  end
-
-  create_table "products", :force => true do |t|
-    t.string   "name"
-    t.float    "price"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
