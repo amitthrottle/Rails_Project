@@ -19,9 +19,9 @@
     <td><%= doctor.name %></td>
     <td><%= doctor.specialisation %></td>
     <td><%= doctor.start_time %></td><td><%= doctor.end_time %></td>
-    <td><%= link_to 'Show', doctor %></td>
-    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-    <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', doctor, class: "btn btn-primary btn-sm" %></td>
+    <td><%= link_to 'Edit', edit_doctor_path(doctor), class: "btn btn-primary btn-sm"  %></td>
+    <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm"  %></td>
   </tr>
   </tbody>
 <% end %>
@@ -29,4 +29,4 @@
 
 <br />
 
-<%= link_to 'Add new doctor', new_doctor_path %>
+<%= link_to 'Add new doctor', new_doctor_path, class: "btn btn-link"  %>
